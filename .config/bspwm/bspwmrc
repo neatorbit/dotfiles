@@ -1,0 +1,26 @@
+#!/bin/bash
+
+sxhkd &
+$HOME/.config/polybar/launch.sh
+
+bspc monitor -d 1 2 3 4 5 6 7 8
+
+bspc config border_width         3
+bspc config window_gap           3
+bspc config split_ratio          0.50
+
+bspc config active_border_color  "#282A2E"
+bspc config normal_border_color  "#282A2E"
+bspc config focused_border_color "#D79877"
+
+bspc config focus_follows_pointer true
+bspc config ignore_ewmh_focus true
+
+bspc rule -a steam desktop="^4" state=tiled follow=off
+bspc rule -a Spotify desktop="^5" state=tiled follow=off
+bspc rule -a discord desktop="^6" state=tiled follow=off
+bspc rule -a obs desktop="^7" state=tiled follow=off
+bspc rule -a Yad state=floating
+bspc rule -a mana-app state=floating
+bspc rule -a mana-app-debug.exe state=floating
+bspc rule -a mana-app-release.exe state=floating

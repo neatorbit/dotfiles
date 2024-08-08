@@ -1,0 +1,37 @@
+BasedOnStyle: Google
+# Base
+ColumnLimit: 0
+# Indent
+IndentWidth: 4
+TabWidth: 4
+AccessModifierOffset: -4
+IndentCaseBlocks: true
+NamespaceIndentation: All
+# Comments
+FixNamespaceComments: false
+# Alignment
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignTrailingComments: true
+PointerAlignment: Left
+# Brace styles
+BraceWrapping: 
+  AfterCaseLabel: true
+  AfterClass: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: false
+  BeforeCatch: true
+  BeforeElse: true
+  BeforeLambdaBody: true
+  BeforeWhile: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+# Include Order
+SortIncludes: false
+IncludeBlocks: Preserve

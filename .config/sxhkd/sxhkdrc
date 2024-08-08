@@ -1,0 +1,134 @@
+# --- BSPWM --- #
+# Restart bspwm
+super + shift + r
+	bspc wm -r
+
+# Quit bspwm
+super + alt + q
+	bspc quit
+
+# Close or kill window
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# Focus on window in a given direction
+super + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# Focus the next/previous desktop
+super + shift + {Left,Right}
+	bspc desktop -f {prev,next}.local
+
+# Focus on a desktop
+super + {1-8}
+	bspc desktop -f "^{1-8}"
+
+# Send active window to a desktop
+super + ctrl {1-8}
+	bspc node -d "^{1-8}"
+
+# Toggle tiled modes
+super + t
+    bspc node focused.tiled -t pseudo_tiled || bspc node focused.pseudo_tiled -t tiled
+
+# Toggle fullscreen on and off
+super + f
+    bspc node focused.tiled -t fullscreen || bspc node focused.fullscreen -t tiled
+
+# Toggle floating on and off
+super + s
+    bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# Preselect the window direction
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# Cancel the preselection
+super + ctrl + c
+	bspc node -p cancel
+
+# # Preselect the window ratio
+# super + ctrl + {1-9}
+# 	bspc node -o 0.{1-9}
+
+# --- SXHKD --- #
+# Reload sxhkd and its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# --- Media --- #
+XF86AudioPlay
+    playerctl --player=spotify play-pause
+
+XF86AudioStop
+    playerctl --player=spotify stop
+
+XF86AudioPrev
+    playerctl --player=spotify previous
+
+XF86AudioNext
+    playerctl --player=spotify next
+
+XF86AudioMute
+    pactl set-sink-mute 0 toggle
+
+XF86AudioLowerVolume
+    pactl set-sink-volume 0 -2.5%
+
+XF86AudioRaiseVolume
+    pactl set-sink-volume 0 +2.5%
+
+# --- Rofi --- #
+# Application launcher
+super + @space
+	rofi -show drun
+
+# Calculator
+super + c
+    rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n "\{result\}" | xclip -sel clip"
+
+# Power menu
+super + p
+    ~/.config/polybar/scripts/powermenu.sh
+
+# --- Screenshots --- #
+# Take partial screenshot
+Print
+    flameshot gui -p ~/Pictures/Screenshots/
+
+# Take fullscreen screenshot
+Print + ctrl
+    flameshot full -p ~/Pictures/Screenshots/
+
+# --- Recording --- #
+# Start recording
+super + F1
+    source $HOME/.config/polybar/scripts/recording.sh
+
+# Stop recording
+super + F2
+    $HOME/.config/polybar/scripts/recording.sh --stop
+
+# --- Redshift --- #
+super + F7
+    redshift -P -O 4500
+
+super + shift + F7
+    redshift -P -O 6500
+
+# --- Applications --- #
+# Terminal
+super + Return
+	kitty
+
+# Web browser
+super + w
+	firefox
+
+# File manager
+super + e
+	nautilus
+
+# Obsidian
+super + n
+    obsidian

@@ -1,0 +1,23 @@
+CompileFlags:
+  Add: [
+    "-xc-header",
+    "-std=gnu11",
+    "-g",
+    "-O0",
+    "-Wall",
+    "-Wextra",
+    "-Wconversion",
+    "-Wstrict-prototypes",
+    "-Wno-missing-braces",
+    "-Wno-sign-conversion",
+    "-Wno-unused-parameter",
+    "-Wno-unused-function",
+    "-fansi-escape-codes",
+    "-fdeclspec",
+    "-fdiagnostics-absolute-paths",
+    "-fdiagnostics-color=always",
+    "-D_CRT_SECURE_NO_WARNINGS",
+    "-DMANA_DEBUG"
+  ] 
+Diagnostics:
+  UnusedIncludes: None

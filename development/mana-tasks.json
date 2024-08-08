@@ -1,0 +1,34 @@
+{
+    "tasks": [
+        {
+            "name": "Hotreload",
+            "target": "hotreload",
+            "args": "debug"
+        },
+        {
+            "name": "Run (debug)",
+            "target": "run",
+            "args": "debug",
+            "useTerminal": true
+        },
+        {
+            "name": "Run (release)",
+            "target": "run",
+            "args": "release",
+            "useTerminal": true
+        },
+        {
+            "name": "Debugger",
+            "target": "debugger",
+            "args": "debug"
+        },
+        {
+            "name": "Distribute",
+            "target": "distribute"
+        },
+        {
+            "name": "Clean",
+            "target": "clean"
+        }
+    ]
+}
